@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/imagen/cintas-rollo-carrete-pelicula-negativa-ilustracion-logotipo-video-cine-pelicula_468322-1105.png" type="image/x-icon">
+    
+    <!-- Fuentes extendidas -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+    </style>
+    
+    <!-- Iconos extendidos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/brands.min.css">
+    
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styler.css">
+    
+    <title>Aficionado al Cine | Plataforma de Recomendaciones Cinematográficas</title>
+</head>
+
+<body>
+    <!-- NAVEGACIÓN MEJORADA -->
+    <nav class="navbar-container">
+        <div class="navbar-top">
+            <div class="navbar-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="../static/imagen/logo-cine.png" alt="Logo Cine" class="logo-img">
+                    <span class="logo-text">Aficionado al Cine</span>
+                </a>
+            </div>
+            
+            <div class="navbar-search">
+                <form class="search-form" method="GET" action="/buscar">
+                    <input type="text" placeholder="Buscar películas..." class="search-input">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="navbar-actions">
+                <div class="user-actions">
+                    <a href="/registro" class="btn-register">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Registro</span>
+                    </a>
+                    <a href="/login" class="btn-login">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+                
+                <div class="user-profile">
+                    <div class="profile-dropdown">
+                        <img src="../static/imagen/user-default.png" alt="Perfil" class="profile-img">
+                        <div class="dropdown-content">
+                            <a href="/perfil"><i class="fas fa-user-circle"></i> Mi Perfil</a>
+                            <a href="/configuracion"><i class="fas fa-cog"></i> Configuración</a>
+                            <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navbar-menu">
+            <ul class="main-menu">
+                <li class="menu-item active">
+                    <a href="#Inicio">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#Galeria">
+                        <i class="fas fa-film"></i>
+                        <span>Galería</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#recomendaciones">
+                        <i class="fas fa-robot"></i>
+                        <span>Recomendador IA</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#blog">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog Cinéfilo</span>
+                    </a>
+                </li>
+                <li class="menu-item dropdown">
+                    <a href="#mas">
+                        <i class="fas fa-ellipsis-h"></i>
+                        <span>Más</span>
+                    </a>
+                    <div class="dropdown-content extended">
+                        <div class="dropdown-column">
+                            <h4>Explorar</h4>
+                            <a href="/nominaciones"><i class="fas fa-trophy"></i> Nominaciones</a>
+                            <a href="/festivales"><i class="fas fa-award"></i> Festivales</a>
+                            <a href="/directores"><i class="fas fa-video"></i> Directores</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <h4>Comunidad</h4>
+                            <a href="/foro"><i class="fas fa-comments"></i> Foro</a>
+                            <a href="/clubs"><i class="fas fa-users"></i> Clubs de Cine</a>
+                            <a href="/eventos"><i class="fas fa-calendar-alt"></i> Eventos</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <h4>Recursos</h4>
+                            <a href="/bibliografia"><i class="fas fa-book"></i> Bibliografía</a>
+                            <a href="/acreditaciones"><i class="fas fa-id-card"></i> Acreditaciones</a>
+                            <a href="/ayuda"><i class="fas fa-question-circle"></i> Ayuda</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION MEJORADA -->
+    <section class="hero-section" id="Inicio">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('https://image.tmdb.org/t/p/original/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg');">
+                <div class="hero-content">
+                    <div class="hero-tags">
+                        <span class="hero-tag">Estreno</span>
+                        <span class="hero-tag">IMDb 8.9</span>
+                        <span class="hero-tag">Ciencia Ficción</span>
+                    </div>
+                    <h1 class="hero-title">Dune: Parte Dos</h1>
+                    <p class="hero-description">Paul Atreides se une a los Fremen para vengar a su familia y liberar el desértico planeta Arrakis del yugo de los Harkonnen.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-hero btn-play">
+                            <i class="fas fa-play"></i> Reproducir Tráiler
+                        </button>
+                        <button class="btn-hero btn-details">
+                            <i class="fas fa-info-circle"></i> Ver Detalles
+                        </button>
+                    </div>
+                    <div class="hero-meta">
+                        <span><i class="fas fa-clock"></i> 166 min</span>
+                        <span><i class="fas fa-calendar-alt"></i> 2024</span>
+                        <span><i class="fas fa-globe"></i> Estados Unidos</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slides adicionales -->
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('https://image.tmdb.org/t/p/original/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg');">
+                <!-- Contenido similar -->
+            </div>
+            
+            <div class="slider-controls">
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots"></div>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        
+        <div class="hero-bottom-bar">
+            <div class="trending-now">
+                <h3>Tendencias Ahora:</h3>
+                <div class="trending-tags">
+                    <a href="#" class="trending-tag">#Oscar2024</a>
+                    <a href="#" class="trending-tag">#CineIndependiente</a>
+                    <a href="#" class="trending-tag">#Nolan</a>
+                    <a href="#" class="trending-tag">#CineEuropeo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE RECOMENDACIONES MEJORADA -->
+    <section class="recommendations-section" id="recomendaciones">
+        <div class="section-header">
+            <div class="section-title-container">
+                <h2 class="section-title">
+                    <i class="fas fa-robot"></i>
+                    <span>Recomendador Inteligente</span>
+                </h2>
+                <p class="section-subtitle">Nuestro sistema de IA analiza tus gustos para sugerirte películas perfectas</p>
+            </div>
+            
+            <div class="recommendation-tools">
+                <div class="recommendation-search">
+                    <form class="recommendation-form" method="POST">
+                        <div class="search-box">
+                            <input type="text" name="peli" class="search-input" placeholder="Ej: 'El Padrino'" maxlength="40" autocomplete="off">
+                            <button type="submit" class="search-button">
+                                <i class="fas fa-magic"></i>
+                                <span>Recomendar</span>
+                            </button>
+                        </div>
+                        <div class="search-suggestions">
+                            <span>¿No sabes qué buscar? Prueba con:</span>
+                            <a href="#" class="suggestion">Interestelar</a>
+                            <a href="#" class="suggestion">Parásitos</a>
+                            <a href="#" class="suggestion">El Señor de los Anillos</a>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="recommendation-filters">
+                    <div class="filter-section">
+                        <h4>Filtrar por:</h4>
+                        <div class="filter-options">
+                            <div class="filter-group">
+                                <h5>Géneros</h5>
+                                <div class="filter-tags">
+                                    <label class="filter-tag">
+                                        <input type="checkbox" name="genre" value="action" checked>
+                                        <span>Acción</span>
+                                    </label>
+                                    <label class="filter-tag">
+                                        <input type="checkbox" name="genre" value="drama">
+                                        <span>Drama</span>
+                                    </label>
+                                    <!-- Más géneros -->
+                                </div>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <h5>Décadas</h5>
+                                <div class="decade-filters">
+                                    <label class="decade-filter">
+                                        <input type="checkbox" name="decade" value="2020s">
+                                        <span>2020s</span>
+                                    </label>
+                                    <!-- Más décadas -->
+                                </div>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <h5>Plataformas</h5>
+                                <div class="platform-filters">
+                                    <label class="platform-filter">
+                                        <input type="checkbox" name="platform" value="netflix">
+                                        <img src="../static/icon/Netflix.png" alt="Netflix">
+                                    </label>
+                                    <!-- Más plataformas -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recommendation-results">
+            {% if search != 'null' %}
+                {% if recomendacion %}
+                <div class="results-header">
+                    <h3 class="results-title">Resultados para: <span class="search-query">"{{search}}"</span></h3>
+                    <div class="results-sorting">
+                        <span>Ordenar por:</span>
+                        <select class="sort-select">
+                            <option value="relevance">Relevancia</option>
+                            <option value="rating">Puntuación</option>
+                            <option value="year">Año</option>
+                            <option value="popularity">Popularidad</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="recommendation-grid">
+                    {% for pelicula in recomendacion %}
+                    <div class="movie-card">
+                        <div class="card-header">
+                            <img src="{{ portada }}" alt="{{ pelicula }}" class="movie-poster">
+                            <div class="movie-overlay">
+                                <div class="overlay-content">
+                                    <div class="movie-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>8.5</span>
+                                    </div>
+                                    <div class="movie-actions">
+                                        <button class="action-btn like-btn">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                        <button class="action-btn expand-btn" onclick="showMovieDetails('{{ pelicula }}')">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="movie-title">{{ pelicula }}</h4>
+                            <div class="movie-meta">
+                                <span class="movie-year">2023</span>
+                                <span class="movie-genre">Drama/Historia</span>
+                            </div>
+                            <div class="movie-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>92%</span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-eye"></i>
+                                    <span>1.2M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="results-footer">
+                    <button class="btn-load-more">
+                        <i class="fas fa-redo"></i>
+                        <span>Cargar más recomendaciones</span>
+                    </button>
+                    <div class="results-summary">
+                        Mostrando <span>8</span> de <span>24</span> resultados
+                    </div>
+                </div>
+                {% else %}
+                <div class="no-results">
+                    <div class="no-results-content">
+                        <img src="../static/imagen/no-results.png" alt="Sin resultados">
+                        <h3>No encontramos coincidencias para "{{search}}"</h3>
+                        <p>Prueba con un título diferente o revisa nuestros filtros de búsqueda.</p>
+                        <button class="btn-explore">
+                            <i class="fas fa-compass"></i>
+                            <span>Explorar catálogo</span>
+                        </button>
+                    </div>
+                </div>
+                {% endif %}
+            {% else %}
+            <div class="welcome-recommender">
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <h3><i class="fas fa-robot"></i> Hola, soy tu asistente de cine</h3>
+                        <p>Dime qué película te gustó y te recomendaré títulos similares basados en nuestro algoritmo de inteligencia artificial.</p>
+                        <ul class="recommender-features">
+                            <li><i class="fas fa-check-circle"></i> Analiza tus preferencias</li>
+                            <li><i class="fas fa-check-circle"></i> Considera 50+ factores</li>
+                            <li><i class="fas fa-check-circle"></i> Aprende de tus votos</li>
+                        </ul>
+                    </div>
+                    <div class="welcome-examples">
+                        <div class="example-card">
+                            <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Ejemplo">
+                            <p>Ejemplo: Si te gustó <strong>Oppenheimer</strong>, prueba con:</p>
+                            <ul>
+                                <li>El Proyecto Manhattan</li>
+                                <li>La Teoría del Todo</li>
+                                <li>El Código Enigma</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- GALERÍA EXTENDIDA -->
+    <section class="gallery-section" id="Galeria">
+        <div class="section-header">
+            <h2 class="section-title">
+                <i class="fas fa-film"></i>
+                <span>Galería Cinematográfica</span>
+            </h2>
+            <div class="section-tabs">
+                <button class="tab-button active" data-tab="tendencias">Tendencias</button>
+                <button class="tab-button" data-tab="nominadas">Nominadas 2024</button>
+                <button class="tab-button" data-tab="clasicos">Clásicos</button>
+                <button class="tab-button" data-tab="independientes">Independientes</button>
+                <button class="tab-button" data-tab="todas">Ver Todas</button>
+            </div>
+        </div>
+        
+        <div class="gallery-content">
+            <div class="tab-content active" id="tendencias">
+                <div class="gallery-slider">
+                    <div class="slider-header">
+                        <h3 class="slider-title">Películas más populares este mes</h3>
+                        <div class="slider-nav">
+                            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-slider">
+                        {% for i in range(10) %}
+                        <div class="slider-item">
+                            <div class="movie-card-large">
+                                <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Película">
+                                <div class="movie-badge">TOP {{ i+1 }}</div>
+                                <div class="movie-details">
+                                    <h4>Oppenheimer</h4>
+                                    <div class="movie-meta">
+                                        <span>2023</span>
+                                        <span>181 min</span>
+                                        <span>8.8 ★</span>
+                                    </div>
+                                    <button class="btn-quickview">
+                                        <i class="fas fa-eye"></i> Vista Rápida
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="genre-highlights">
+                    <div class="genre-row">
+                        <div class="genre-header">
+                            <h4><i class="fas fa-explosion"></i> Acción y Aventura</h4>
+                            <a href="#" class="see-all">Ver todo <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="genre-slider">
+                            <!-- Películas de acción -->
+                        </div>
+                    </div>
+                    
+                    <div class="genre-row">
+                        <div class="genre-header">
+                            <h4><i class="fas fa-theater-masks"></i> Drama</h4>
+                            <a href="#" class="see-all">Ver todo <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="genre-slider">
+                            <!-- Películas de drama -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Otras pestañas -->
+            <div class="tab-content" id="nominadas">
+                <!-- Contenido de nominadas -->
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLE DE PELÍCULA EXTENDIDO -->
+    <div class="movie-detail-modal" id="movieDetailModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            
+            <div class="modal-content">
+                <div class="movie-header">
+                    <div class="movie-backdrop" style="background-image: url('https://image.tmdb.org/t/p/original/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg');">
+                        <div class="backdrop-overlay">
+                            <div class="movie-poster">
+                                <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Poster">
+                                <button class="btn-play-trailer">
+                                    <i class="fas fa-play"></i> Tráiler
+                                </button>
+                            </div>
+                            <div class="movie-header-info">
+                                <h2 class="movie-title">Oppenheimer <span class="movie-year">(2023)</span></h2>
+                                <div class="movie-meta">
+                                    <span class="certification">R</span>
+                                    <span class="runtime">181 min</span>
+                                    <span class="genre">Drama, Historia</span>
+                                    <span class="release-date">Julio 21, 2023</span>
+                                </div>
+                                <div class="movie-ratings">
+                                    <div class="rating-item">
+                                        <div class="rating-source">
+                                            <img src="../static/icon/imdb.png" alt="IMDb">
+                                        </div>
+                                        <div class="rating-value">8.8/10</div>
+                                    </div>
+                                    <!-- Más ratings -->
+                                </div>
+                                <div class="movie-actions">
+                                    <button class="action-btn">
+                                        <i class="fas fa-bookmark"></i> Guardar
+                                    </button>
+                                    <button class="action-btn">
+                                        <i class="fas fa-share-alt"></i> Compartir
+                                    </button>
+                                    <button class="action-btn">
+                                        <i class="fas fa-ellipsis-h"></i> Más
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-body">
+                    <div class="movie-main">
+                        <div class="movie-overview">
+                            <h3>Sinopsis</h3>
+                            <p>Durante la Segunda Guerra Mundial, el teniente general Leslie Groves designa al físico J. Robert Oppenheimer para un grupo de trabajo que está desarrollando el Proyecto Manhattan, cuyo objetivo consiste en fabricar la primera bomba atómica.</p>
+                        </div>
+                        
+                        <div class="movie-cast">
+                            <h3>Reparto</h3>
+                            <div class="cast-grid">
+                                {% for actor in cast %}
+                                <div class="cast-member">
+                                    <img src="{{ actor.foto }}" alt="{{ actor.nombre }}">
+                                    <h5>{{ actor.nombre }}</h5>
+                                    <p>{{ actor.personaje }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        <div class="movie-media">
+                            <h3>Multimedia</h3>
+                            <div class="media-tabs">
+                                <button class="media-tab active" data-tab="trailers">Tráilers</button>
+                                <button class="media-tab" data-tab="photos">Fotos</button>
+                                <button class="media-tab" data-tab="posters">Posters</button>
+                            </div>
+                            <div class="media-content">
+                                <!-- Contenido multimedia -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-sidebar">
+                        <div class="sidebar-widget">
+                            <h4>Detalles Técnicos</h4>
+                            <ul class="movie-details-list">
+                                <li>
+                                    <span class="detail-label">Director:</span>
+                                    <span class="detail-value">Christopher Nolan</span>
+                                </li>
+                                <!-- Más detalles -->
+                            </ul>
+                        </div>
+                        
+                        <div class="sidebar-widget">
+                            <h4>Dónde Ver</h4>
+                            <div class="streaming-options">
+                                <a href="#" class="streaming-option">
+                                    <img src="../static/icon/netflix.png" alt="Netflix">
+                                    <span>Alquilar</span>
+                                </a>
+                                <!-- Más opciones -->
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-widget">
+                            <h4>Estadísticas</h4>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-value">92%</div>
+                                    <div class="stat-label">Recomendación</div>
+                                </div>
+                                <!-- Más stats -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-footer">
+                    <div class="similar-movies">
+                        <h3>Películas Similares</h3>
+                        <div class="similar-grid">
+                            <!-- Películas similares -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER EXTENDIDO -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-column">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#">Películas</a></li>
+                    <li><a href="#">Series</a></li>
+                    <li><a href="#">Documentales</a></li>
+                    <li><a href="#">Festivales</a></li>
+                    <li><a href="#">Noticias</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Comunidad</h4>
+                <ul>
+                    <li><a href="#">Foros</a></li>
+                    <li><a href="#">Clubes</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Encuestas</a></li>
+                    <li><a href="#">Rankings</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Glosario</a></li>
+                    <li><a href="#">Bibliografía</a></li>
+                    <li><a href="#">Escuelas de cine</a></li>
+                    <li><a href="#">Convocatorias</a></li>
+                    <li><a href="#">Becas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Sobre Nosotros</h4>
+                <ul>
+                    <li><a href="#">Equipo</a></li>
+                    <li><a href="#">Historia</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                    <li><a href="#">Prensa</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column newsletter">
+                <h4>Newsletter</h4>
+                <p>Suscríbete para recibir las últimas novedades cinematográficas</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico">
+                    <button type="submit">Suscribirse</button>
+                </form>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="../static/imagen/logo-cine.png" alt="Logo">
+                <span>Aficionado al Cine</span>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Términos de uso</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Cookies</a>
+                <a href="#">FAQ</a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2024 Aficionado al Cine. Todos los derechos reservados.</p>
+                <p>Datos proporcionados por TMDb y FilmAffinity.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../static/js/slyderpeliculas.js"></script>
+    <script src="../static/js/funciones_onclick.js"></script>
+    <script src="../static/js/modal.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/recommendations.js"></script>
+    <script>
+        // Función para abrir el modal
+function showMovieDetails(movieTitle) {
+  const modal = document.getElementById('movieDetailModal');
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Bloquea el scroll
+}
+
+// Función para cerrar el modal
+function closeModal() {
+  const modal = document.getElementById('movieDetailModal');
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Restaura el scroll
+}
+
+// Event listeners para todos los botones
+document.querySelectorAll('.btn-expand, .btn-details').forEach(button => {
+  button.addEventListener('click', () => {
+    const movieTitle = button.closest('.movie-card')?.querySelector('.movie-title')?.textContent || "Película";
+    showMovieDetails(movieTitle);
+  });
+});
+
+// Cerrar al hacer clic en la X o fuera del modal
+document.querySelector('.modal-close').addEventListener('click', closeModal);
+document.querySelector('.modal-overlay').addEventListener('click', closeModal);
+    </script>
+</body>
+</html> 
